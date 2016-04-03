@@ -1,0 +1,722 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript,Babel," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="帅锅" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="转载自YOFFE技术分享-郭永峰老师的课件（不算侵权、不算侵权、不算侵权）&amp;nbsp;Babel初学者教程包&amp;nbsp;
+
+写在前面的话：&amp;nbsp;先在电脑安装node环境，node官网 https://nodejs.org&amp;nbsp;cli：就是命令行的意思&amp;nbsp;看不下去就想想一个月 17、8k，20多k 的工资&amp;nbsp;多练多琢磨&amp;nbsp;
+
+介绍Babel 是一个通用的多用途 J">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React学习系列（一）：Babel">
+<meta property="og:url" content="http://yoursite.com/2016/03/31/React学习系列一：Babel/index.html">
+<meta property="og:site_name" content="帅锅">
+<meta property="og:description" content="转载自YOFFE技术分享-郭永峰老师的课件（不算侵权、不算侵权、不算侵权）&amp;nbsp;Babel初学者教程包&amp;nbsp;
+
+写在前面的话：&amp;nbsp;先在电脑安装node环境，node官网 https://nodejs.org&amp;nbsp;cli：就是命令行的意思&amp;nbsp;看不下去就想想一个月 17、8k，20多k 的工资&amp;nbsp;多练多琢磨&amp;nbsp;
+
+介绍Babel 是一个通用的多用途 J">
+<meta property="og:updated_time" content="2016-04-01T09:09:06.175Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React学习系列（一）：Babel">
+<meta name="twitter:description" content="转载自YOFFE技术分享-郭永峰老师的课件（不算侵权、不算侵权、不算侵权）&amp;nbsp;Babel初学者教程包&amp;nbsp;
+
+写在前面的话：&amp;nbsp;先在电脑安装node环境，node官网 https://nodejs.org&amp;nbsp;cli：就是命令行的意思&amp;nbsp;看不下去就想想一个月 17、8k，20多k 的工资&amp;nbsp;多练多琢磨&amp;nbsp;
+
+介绍Babel 是一个通用的多用途 J">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> React学习系列（一）：Babel | 帅锅 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">帅锅</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                React学习系列（一）：Babel
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-31T00:00:00+08:00" content="2016-03-31">
+              2016-03-31
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>转载自<a href="http://guoyongfeng.github.io/idoc/index.html" target="_blank" rel="external"><font color="blue">YOFFE技术分享-郭永峰老师的课件（不算侵权、不算侵权、不算侵权）</font></a>&nbsp;<br><a href="https://github.com/shuaiguoisme/babel-starter-kit" target="_blank" rel="external"><font color="blue">Babel初学者教程包</font></a>&nbsp;</p>
+<blockquote>
+<p>写在前面的话：&nbsp;<br>先在电脑安装node环境，<a href="https://nodejs.org/en/" target="_blank" rel="external">node官网 <font color="blue">https://nodejs.org</font></a>&nbsp;<br>cli：就是命令行的意思&nbsp;<br><strong>看不下去就想想一个月</strong> <strong><em>17、8k</em></strong>，<strong><em>20多k</em></strong> <strong>的工资</strong>&nbsp;<br>多练多琢磨&nbsp;</p>
+</blockquote>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍<br><br></h1><p><strong>Babel</strong> 是一个通用的多用途 JavaScript 编译器。通过 Babel 你可以使用（并创建）下一代的 JavaScript，以及下一代的 JavaScript 工具。</p>
+<p>作为一种语言，JavaScript 在不断发展，新的标准／提案和新的特性层出不穷。 在得到广泛普及之前，Babel 能够让你提前（甚至数年）使用它们。</p>
+<p>Babel 把用最新标准编写的 JavaScript 代码向下编译成可以在今天随处可用的版本。 这一过程叫做“源码到源码”编译， 也被称为转换编译（transpiling，是一个自造合成词，即转换＋编译。以下也简称为转译）。</p>
+<p>例如，Babel 能够将新的 ES2015 箭头函数语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const square = n =&gt; n * n;</span><br></pre></td></tr></table></figure>
+<p>转译为：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const square = function (n) &#123;</span><br><span class="line">	return n * n;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>不过 Babel 的用途并不止于此，它支持语法扩展，能支持像 React 所用的 JSX 语法，同时还支持用于静态类型检查的流式语法（Flow Syntax）。</p>
+<p>更重要的是，Babel 的一切都是简单的插件，谁都可以创建自己的插件，利用 Babel 的全部威力去做任何事情。</p>
+<p>再进一步，Babel 自身被分解成了数个核心模块，任何人都可以利用它们来创建下一代的 JavaScript 工具。</p>
+<p>已经有很多人都这样做了，围绕着 Babel 涌现出了非常大规模和多样化的生态系统。 在这本手册中，我将介绍如何使用 Babel 的内建工具以及一些来自于社区的非常有用的东西。</p>
+<h1 id="安装Babel"><a href="#安装Babel" class="headerlink" title="安装Babel"></a>安装Babel<br><br></h1><p>由于 JavaScript 社区没有统一的构建工具、框架、平台等等，因此 Babel 正式集成了对所有主流工具的支持。 从 Gulp 到 Browserify，从 Ember 到 Meteor，不管你的环境设置如何，Babel 都有正式的集成支持。</p>
+<blockquote>
+<p>本手册的目的主要是介绍 Babel 内建方式的安装，不过你可以访问交互式的<a href="http://babeljs.io/docs/setup/" target="_blank" rel="external"><font color="blue">安装页面</font></a>来查看其它的整合方式。</p>
+</blockquote>
+<h2 id="babel-cli"><a href="#babel-cli" class="headerlink" title="babel-cli"></a>babel-cli<br></h2><p>Babel 的 CLI 是一种在命令行下使用 Babel 编译文件的简单方法。<br>让我们先全局安装它来学习基础知识。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --global babel-cli</span><br><span class="line"># 或</span><br><span class="line">$ npm install -g babel-cli</span><br></pre></td></tr></table></figure></p>
+<p>我们可以这样来编译我们的第一个文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ babel my-file.js</span><br></pre></td></tr></table></figure></p>
+<p>这将把编译后的结果直接输出至终端。使用 –out-file 或着 -o 可以将结果写入到指定的文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ babel example.js --out-file compiled.js</span><br><span class="line"># 或</span><br><span class="line">$ babel example.js -o compiled.js</span><br></pre></td></tr></table></figure></p>
+<p>如果我们想把一个目录整个编译成一个新的目录，可以使用–out-dir或者-d。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ babel src --out-dir lib</span><br><span class="line"># 或</span><br><span class="line">$ babel src -d lib</span><br></pre></td></tr></table></figure></p>
+<h2 id="在项目内运行-Babel-CLI"><a href="#在项目内运行-Babel-CLI" class="headerlink" title="在项目内运行 Babel CLI"></a>在项目内运行 Babel CLI<br></h2><p>尽管你可以把 Babel CLI 全局安装在你的机器上，但是按项目逐个安装在本地会更好(这里的本地是项目所在的文件夹)。<br>有两个主要的原因:</p>
+<ol>
+<li>在同一台机器上的不同项目或许会依赖不同版本的 Babel 并允许你有选择的更新。</li>
+<li>这意味着你对工作环境没有隐式依赖，这让你的项目有很好的可移植性并且易于安装。</li>
+</ol>
+<p>要在（项目）本地安装 Babel CLI 可以运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-cli</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意：由于全局运行 Babel 是一个坏习惯，如果你要卸载全局安装的版本可以运行：npm uninstall –global babel-cli。</p>
+</blockquote>
+<p>安装完成后，你的 package.json 应该如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;my-project&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">      &quot;babel-cli&quot;: &quot;^6.0.0&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在，我们不直接从命令行运行 Babel 了，取而代之我们将把运行命令写在 npm scripts 里，这样可以使用 Babel 的本地版本。</p>
+<p>只需将 “scripts” 字段添加到你的 package.json 文件内并且把 babel 命令写成 build 字段。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;my-project&quot;,</span><br><span class="line">    &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">+   &quot;scripts&quot;: &#123;</span><br><span class="line">+     &quot;build&quot;: &quot;babel src -d lib&quot;</span><br><span class="line">+   &#125;,</span><br><span class="line">    &quot;devDependencies&quot;: &#123;</span><br><span class="line">      &quot;babel-cli&quot;: &quot;^6.0.0&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在可以在终端里运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm src -d lib</span><br></pre></td></tr></table></figure></p>
+<p>这将以与之前同样的方式运行 Babel，但这一次我们使用的是本地副本。</p>
+<h2 id="babel-register"><a href="#babel-register" class="headerlink" title="babel-register"></a>babel-register<br></h2><p>下一个常用的运行 Babel 的方法是通过 babel-register。这种方法只需要引入文件就可以运行 Babel，或许能更好地融入你的项目设置。（即用script标签引入）</p>
+<blockquote>
+<p>但请注意这种方法并不适合正式产品环境使用。 直接部署用此方式编译的代码不是好的做法。 在部署之前预先编译会更好。 不过用在构建脚本(gulp等构件工具)或是其他本地运行的脚本中是非常合适的。</p>
+</blockquote>
+<p>让我们先在项目中创建 index.js 文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;hello world&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>如果我们用 node index.js 来运行它是不会使用 Babel 来编译的。所以我们需要设置 babel-register。</p>
+<p>首先安装 babel-register。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-register</span><br></pre></td></tr></table></figure></p>
+<p>接着，在项目中创建 register.js 文件并添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">require(&quot;babel-register&quot;);</span><br><span class="line">require(&quot;./index.js&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>这样做可以把 Babel 注册到 Node 的模块系统中并开始编译其中 require 的所有文件。</p>
+<p>现在我们可以使用 register.js 来代替 node index.js 来运行了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node register.js</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意：你不能在你要编译的文件内同时注册 Babel，因为 node 会在 Babel 编译它之前就将它执行了。<br>require(“babel-register”);<br>// 未编译的：<br>console.log(“Hello world!”);<br>即在俩者之外的第三方文件注册babel并引入需要编译的文件，当node文件名时，会先编译文件再执行文件<br>$ node register<br>//编译的<br>hello world</p>
+</blockquote>
+<h2 id="babel-node"><a href="#babel-node" class="headerlink" title="babel-node"></a>babel-node<br></h2><p>如果你要用 node CLI 来运行代码，那么整合 Babel 最简单的方式就是使用 babel-node CLI，它是 node CLI 的替代品。</p>
+<blockquote>
+<p>但请注意这种方法并不适合正式产品环境使用。 直接部署用此方式编译的代码不是好的做法。 在部署之前预先编译会更好。 不过用在构建脚本或是其他本地运行的脚本中是非常合适的</p>
+</blockquote>
+<p>首先确保 babel-cli 已经安装了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-cli</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意：如果你不清楚为什么要安装在本地，请阅读上面在项目内运行 Babel CLI 的部分。</p>
+</blockquote>
+<p>然后用 babel-node 来替代 node 运行所有的代码 。<br>如果用 npm scripts 的话只需要这样做：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> &#123;</span><br><span class="line">    &quot;scripts&quot;: &#123;</span><br><span class="line">-     &quot;script-name&quot;: &quot;node script.js&quot;</span><br><span class="line">+     &quot;script-name&quot;: &quot;babel-node script.js&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>要不然的话你需要写全 babel-node 的路径。</p>
+<h2 id="babel-core"><a href="#babel-core" class="headerlink" title="babel-core"></a>babel-core<br></h2><p>如果你需要以编程的方式来使用 Babel，可以使用 babel-core 这个包。<br>首先安装 babel-core。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install babel-core</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var babel = require(&quot;babel-core&quot;);</span><br></pre></td></tr></table></figure>
+<p>字符串形式的 JavaScript 代码可以直接使用 babel.transform 来编译。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">babel.transform(&quot;code();&quot;, options);</span><br><span class="line">// =&gt; &#123; code, map, ast &#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果是文件的话，可以使用异步 api：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">babel.transformFile(&quot;filename.js&quot;, options, function(err, result) &#123;</span><br><span class="line">   result; // =&gt; &#123; code, map, ast &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>或者是同步 api：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">babel.transformFileSync(&quot;filename.js&quot;, options);</span><br><span class="line">// =&gt; &#123; code, map, ast &#125;</span><br></pre></td></tr></table></figure></p>
+<p>要是已经有一个 Babel AST（抽象语法树）了就可以直接从 AST 进行转换。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">babel.transformFromAst(ast, code, options);</span><br><span class="line">// =&gt; &#123; code, map, ast &#125;</span><br></pre></td></tr></table></figure></p>
+<p>对于上述所有方法，options 指的都是 <a href="http://babeljs.io/docs/usage/options/" target="_blank" rel="external"><font color="blue">http://babeljs.io/docs/usage/options/</font></a> (官网API)</p>
+<h1 id="配置-Babel"><a href="#配置-Babel" class="headerlink" title="配置 Babel"></a>配置 Babel<br><br></h1><p>你或许已经注意到了，目前为止通过运行 Babel 自己我们并没能“翻译”代码，而仅仅是把代码从一处拷贝到了另一处。</p>
+<p>这是因为我们还没告诉 Babel 要做什么。</p>
+<blockquote>
+<p>由于 Babel 是一个可以用各种花样去使用的通用编译器，因此默认情况下它反而什么都不做。你必须明确地告诉 Babel 应该要做什么。</p>
+</blockquote>
+<p>你可以通过安装插件（plugins）或预设（presets，也就是一组插件）来指示 Babel 去做什么事情。</p>
+<h2 id="babelrc"><a href="#babelrc" class="headerlink" title=".babelrc"></a>.babelrc<br></h2><p>在我们告诉 Babel 该做什么之前，我们需要创建一个配置文件。你需要做的就是在项目的根路径下创建 .babelrc 文件。<br>然后输入以下内容作为开始：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [],</span><br><span class="line">  &quot;plugins&quot;: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个文件就是用来让 Babel 做你要它做的事情的配置文件。</p>
+<blockquote>
+<p>注意：尽管你也可以用其他方式给 Babel 传递选项，但 .babelrc 文件是约定也是最好的方式。</p>
+</blockquote>
+<h2 id="babel-preset-es2015"><a href="#babel-preset-es2015" class="headerlink" title="babel-preset-es2015"></a>babel-preset-es2015<br></h2><p>我们先从让 Babel 把 ES2015（最新版本的 JavaScript 标准，也叫做 ES6）编译成 ES5（现今在大多数 JavaScript 环境下可用的版本）开始吧。<br>我们需要安装 “es2015” Babel 预设：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-preset-es2015</span><br></pre></td></tr></table></figure></p>
+<p>我们修改 .babelrc 来包含这个预设。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;presets&quot;: [</span><br><span class="line">+     &quot;es2015&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;plugins&quot;: []</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="babel-preset-react"><a href="#babel-preset-react" class="headerlink" title="babel-preset-react"></a>babel-preset-react<br></h2><p>设置 React 一样容易。只需要安装这个预设：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-preset-react</span><br></pre></td></tr></table></figure></p>
+<p>然后在 .babelrc 文件里补充：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;presets&quot;: [</span><br><span class="line">      &quot;es2015&quot;,</span><br><span class="line">+     &quot;react&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;plugins&quot;: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="babel-preset-stage-x"><a href="#babel-preset-stage-x" class="headerlink" title="babel-preset-stage-x"></a>babel-preset-stage-x<br></h2><blockquote>
+<p>下面的不好理解</p>
+</blockquote>
+<p>JavaScript 还有一些提案，正在积极通过 TC39（ECMAScript 标准背后的技术委员会）的流程成为标准的一部分。</p>
+<p>这个流程分为 5（0－4）个阶段。 随着提案得到越多的关注就越有可能被标准采纳，于是他们就继续通过各个阶段，最终在阶段 4 被标准正式采纳。</p>
+<p>以下是4 个不同阶段的（打包的）预设：</p>
+<ul>
+<li>babel-preset-stage-0</li>
+<li>babel-preset-stage-1</li>
+<li>babel-preset-stage-2</li>
+<li>babel-preset-stage-3</li>
+</ul>
+<blockquote>
+<p>注意 stage-4 预设是不存在的因为它就是上面的 es2015 预设。</p>
+</blockquote>
+<p>以上每种预设都依赖于紧随的后期阶段预设。例如，babel-preset-stage-1 依赖 babel-preset-stage-2，后者又依赖 babel-preset-stage-3。<br>使用的时候只需要安装你想要的阶段就可以了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-preset-stage-2</span><br></pre></td></tr></table></figure></p>
+<p>然后添加进你的 .babelrc 配置文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;presets&quot;: [</span><br><span class="line">	    &quot;es2015&quot;,</span><br><span class="line">	    &quot;react&quot;,</span><br><span class="line">+           &quot;stage-2&quot;</span><br><span class="line">	],</span><br><span class="line">	&quot;plugins&quot;: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="执行Babel生成的代码"><a href="#执行Babel生成的代码" class="headerlink" title="执行Babel生成的代码"></a>执行Babel生成的代码<br><br></h1><p>即便你已经用 Babel 编译了你的代码，但这还不算完。</p>
+<h2 id="babel-polyfill"><a href="#babel-polyfill" class="headerlink" title="babel-polyfill"></a>babel-polyfill<br></h2><p>Babel 几乎可以编译所有时新的 JavaScript 语法，但对于 APIs 来说却并非如此。<br>比方说，下列含有箭头函数的需要编译的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function addAll() &#123;</span><br><span class="line"> 		return Array.from(arguments).reduce((a, b) =&gt; a + b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最终会变成这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function addAll() &#123;</span><br><span class="line">  return Array.from(arguments).reduce(function(a, b) &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然而，它依然无法随处可用因为不是所有的 JavaScript 环境都支持 Array.from。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught TypeError: Array.from is not a function</span><br></pre></td></tr></table></figure></p>
+<p>为了解决这个问题，我们使用一种叫做 <a href="https://remysharp.com/2010/10/08/what-is-a-polyfill" target="_blank" rel="external"><font color="blue">Polyfill（代码填充，也可译作兼容性补丁）</font></a> 的技术。 简单地说，polyfill 即是在当前运行环境中用来复制（意指模拟性的复制，而不是拷贝）尚不存在的原生 api 的代码。 能让你提前使用还不可用的 APIs，Array.from 就是一个例子。<br>Babel 用了优秀的<a href="https://github.com/zloirock/core-js" target="_blank" rel="external"><font color="blue">core-js</font></a>用作 polyfill，并且还有定制化的<a href="https://github.com/facebook/regenerator" target="_blank" rel="external"><font color="blue">regenerator</font></a>来让 generators（生成器）和 async functions（异步函数）正常工作。<br>要使用 Babel polyfill，首先用 npm 安装它：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save babel-polyfill</span><br></pre></td></tr></table></figure></p>
+<p>然后只需要在文件顶部导入 polyfill 就可以了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &quot;babel-polyfill&quot;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="babel-runtime"><a href="#babel-runtime" class="headerlink" title="babel-runtime"></a>babel-runtime<br></h2><p>为了实现 ECMAScript 规范的细节，Babel 会使用“助手”方法来保持生成代码的整洁。</p>
+<p>由于这些助手方法可能会特别长并且会被添加到每一个文件的顶部，因此你可以把它们统一移动到一个单一的“运行时（runtime）”中去。</p>
+<p>通过安装 babel-plugin-transform-runtime 和 babel-runtime 来开始。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-plugin-transform-runtime</span><br><span class="line">$ npm install --save babel-runtime</span><br></pre></td></tr></table></figure></p>
+<p>然后更新 .babelrc：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;plugins&quot;: [</span><br><span class="line">+     &quot;transform-runtime&quot;,</span><br><span class="line">      &quot;transform-es2015-classes&quot;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在，Babel 会把这样的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Foo &#123;</span><br><span class="line"> 		method() &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import _classCallCheck from &quot;babel-runtime/helpers/classCallCheck&quot;;</span><br><span class="line">import _createClass from &quot;babel-runtime/helpers/createClass&quot;;</span><br><span class="line"></span><br><span class="line">let Foo = function () &#123;</span><br><span class="line">  function Foo() &#123;</span><br><span class="line">    _classCallCheck(this, Foo);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  _createClass(Foo, [&#123;</span><br><span class="line">    key: &quot;method&quot;,</span><br><span class="line">    value: function method() &#123;&#125;</span><br><span class="line">  &#125;]);</span><br><span class="line"></span><br><span class="line">  return Foo;</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure></p>
+<p>这样就不需要把 _classCallCheck 和 _createClass 这两个助手方法放进每一个需要的文件里去了。</p>
+<h1 id="配置Babel（进阶）"><a href="#配置Babel（进阶）" class="headerlink" title="配置Babel（进阶）"></a>配置Babel（进阶）<br><br></h1><p>大多数人使用 Babel 的内建预设就足够了，不过 Babel 提供了更多更细粒度的能力。</p>
+<h2 id="手动指定插件"><a href="#手动指定插件" class="headerlink" title="手动指定插件"></a>手动指定插件<br></h2><p>Babel 预设就是一些预先配置好的插件的集合，如果你想要做一些不一样的事情你会手动去设定插件，这和使用预设几乎完全相同。</p>
+<p>首先安装插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-plugin-transform-es2015-classes</span><br></pre></td></tr></table></figure></p>
+<p>然后往 .babelrc 文件添加 plugins 字段。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">+   &quot;plugins&quot;: [</span><br><span class="line">+     &quot;transform-es2015-classes&quot;</span><br><span class="line">+   ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这能让你对正在使用的转换器进行更细致的控制。</p>
+<h2 id="插件选项"><a href="#插件选项" class="headerlink" title="插件选项"></a>插件选项<br></h2><p>很多插件也有选项用于配置他们自身的行为。 例如，很多转换器都有“宽松”模式，通过放弃一些标准中的行为来生成更简化且性能更好的代码。</p>
+<p>要为插件添加选项，只需要做出以下更改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;plugins&quot;: [</span><br><span class="line">-     &quot;transform-es2015-classes&quot;</span><br><span class="line">+     [&quot;transform-es2015-classes&quot;, &#123; &quot;loose&quot;: true &#125;]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>接下来几周内我会更新插件文档来详细介绍每一个选项。<a href="https://twitter.com/thejameskyle" target="_blank" rel="external"><font color="blue">关注我以获知更新</font></a>。</p>
+</blockquote>
+<h2 id="基于环境自定义-Babel"><a href="#基于环境自定义-Babel" class="headerlink" title="基于环境自定义 Babel"></a>基于环境自定义 Babel<br></h2><p>巴贝尔插件解决许多不同的问题。 其中大多数是开发工具，可以帮助你调试代码或是与工具集成。 也有大量的插件用于在生产环境中优化你的代码。<br>因此，想要基于环境来配置 Babel 是很常见的。你可以轻松的使用 .babelrc 文件来达成目的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;presets&quot;: [&quot;es2015&quot;],</span><br><span class="line">    &quot;plugins&quot;: [],</span><br><span class="line">+   &quot;env&quot;: &#123;</span><br><span class="line">+     &quot;development&quot;: &#123;</span><br><span class="line">+       &quot;plugins&quot;: [...]</span><br><span class="line">+     &#125;,</span><br><span class="line">+     &quot;production&quot;: &#123;</span><br><span class="line">+       &quot;plugins&quot;: [...]</span><br><span class="line">+     &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Babel</strong> 将根据当前环境来开启 env 下的配置。</p>
+<p>当前环境可以使用 process.env.BABEL_ENV 来获得。 如果 BABEL_ENV 不可用，将会替换成 NODE_ENV，并且如果后者也没有设置，那么缺省值是”development”。<br><strong>Unix</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ BABEL_ENV=production [COMMAND]</span><br><span class="line">$ NODE_ENV=production [COMMAND]</span><br></pre></td></tr></table></figure></p>
+<p><strong>Windows</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ SET BABEL_ENV=production</span><br><span class="line">$ [COMMAND]</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>注意</strong>：[COMMAND] 指的是任意一个用来运行 Babel 的命令（如：babel，babel-node，或是 node，如果你使用了 register 钩子的话）。<br><strong>提示</strong>：如果你想要让命令能够跨 unix 和 windows 平台运行的话，可以使用 cross-env。</p>
+</blockquote>
+<h2 id="制作你自己的预设（preset）"><a href="#制作你自己的预设（preset）" class="headerlink" title="制作你自己的预设（preset）"></a>制作你自己的预设（preset）<br></h2><p>手动指定插件？插件选项？环境特定设置？所有这些配置都会在你的项目里产生大量的重复工作。</p>
+<p>为此，我们鼓励社区创建自己的预设。 这可能是一个针对特定 node 版本的预设，或是适用于你整个公司的预设。.</p>
+<p>创建预设非常容易。比方说你这样一个 .babelrc 文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    &quot;es2015&quot;,</span><br><span class="line">    &quot;react&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;plugins&quot;: [</span><br><span class="line">    &quot;transform-flow-strip-types&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>你要做的就是依循命名约定 babel-preset-* 来创建一个新项目（请务必对这个命名约定保持责任心，也就是说不要滥用这个命名空间），然后创建两个文件。</p>
+<p>首先，创建一个 package.json，包括针对预设所必要的 dependencies。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;babel-preset-my-awesome-preset&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;author&quot;: &quot;James Kyle &lt;me@thejameskyle.com&gt;&quot;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;babel-preset-es2015&quot;: &quot;^6.3.13&quot;,</span><br><span class="line">    &quot;babel-preset-react&quot;: &quot;^6.3.13&quot;,</span><br><span class="line">    &quot;babel-plugin-transform-flow-strip-types&quot;: &quot;^6.3.15&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后创建 index.js 文件用于导出 .babelrc 的内容，使用对应的 require 调用来替换 plugins／presets 字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  presets: [</span><br><span class="line">    require(&quot;babel-preset-es2015&quot;),</span><br><span class="line">    require(&quot;babel-preset-react&quot;)</span><br><span class="line">  ],</span><br><span class="line">  plugins: [</span><br><span class="line">    require(&quot;babel-plugin-transform-flow-strip-types&quot;)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>然后只需要发布到 npm 于是你就可以像其它预设一样来使用你的预设了。</p>
+<h1 id="Babel-和其他工具"><a href="#Babel-和其他工具" class="headerlink" title="Babel 和其他工具"></a>Babel 和其他工具<br><br></h1><p>一旦你掌握的窍门，安装 Babel 还是十分简明的，不过和其他工具搭配在一起就会变得困难多了。 不过我们一直在与其他项目密切合作以确保这种体验尽可能简单。</p>
+<h2 id="静态分析工具"><a href="#静态分析工具" class="headerlink" title="静态分析工具"></a>静态分析工具<br></h2><p>新标准为语言带来了许多新的语法，静态分析工具正在将此利用起来。</p>
+<h2 id="语法检查（Linting）"><a href="#语法检查（Linting）" class="headerlink" title="语法检查（Linting）"></a>语法检查（Linting）<br></h2><p><a href="http://eslint.org/" target="_blank" rel="external"><font color="blue">ESLint</font></a> 是最流行的语法检查工具之一，因此我们维护了一个官方的 babel-eslint 整合软件包。</p>
+<p>首先安装 eslint 和 babel-eslint。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev eslint babel-eslint</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意：兼容 Babel 6 的 babel-eslint 目前正处于预发行版本。 安装<a href="https://github.com/babel/babel-eslint/releases" target="_blank" rel="external"><font color="blue">最新的</font></a> 5.0 beta 版来兼容 Babel 6。</p>
+</blockquote>
+<p>然后创建或使用项目现有的 .eslintrc 文件并设置 parser 为 babel-eslint。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">+   &quot;parser&quot;: &quot;babel-eslint&quot;,</span><br><span class="line">    &quot;rules&quot;: &#123;</span><br><span class="line">      ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在添加一个 lint 任务到 npm 的 package.json 脚本中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;my-module&quot;,</span><br><span class="line">    &quot;scripts&quot;: &#123;</span><br><span class="line">+     &quot;lint&quot;: &quot;eslint my-files.js&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;devDependencies&quot;: &#123;</span><br><span class="line">      &quot;babel-eslint&quot;: &quot;...&quot;,</span><br><span class="line">      &quot;eslint&quot;: &quot;...&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>接着只需要运行这个任务就一切就绪了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run lint</span><br></pre></td></tr></table></figure></p>
+<p>详细信息请咨询 <a href="https://github.com/babel/babel-eslint" target="_blank" rel="external"><font color="blue">babel-eslint</font></a> 或者 <a href="http://eslint.org/" target="_blank" rel="external"><font color="blue">eslint</font></a>的文档。</p>
+<h2 id="代码风格"><a href="#代码风格" class="headerlink" title="代码风格"></a>代码风格<br></h2><p><strong>JSCS</strong> 是一个极受欢迎的工具，在语法检查的基础上更进一步检查代码自身的风格。 <strong>Babel</strong> 和 <strong>JSCS</strong> 项目的核心维护者之一（<a href="https://github.com/hzoo" target="_blank" rel="external"><font color="blue">@hzoo</font></a>）维护着 <strong>JSCS</strong> 的官方集成。</p>
+<p>更妙的是，JSCS 自己通过 –esnext 选项实现了这种集成，于是和 Babel 的集成就简化成了直接在命令行运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ jscs . --esnext</span><br></pre></td></tr></table></figure></p>
+<p>或者在 .jscsrc 文件里添加 esnext 选项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;preset&quot;: &quot;airbnb&quot;,</span><br><span class="line">+   &quot;esnext&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>详细信息请咨询 <a href="https://github.com/jscs-dev/babel-jscs" target="_blank" rel="external"><font color="blue">babel-jscs</font></a> 或是 <a href="http://jscs.info/" target="_blank" rel="external"><font color="blue">jscs</font></a> 的文档。</p>
+<h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档<br></h2><p>使用 <strong>Babel</strong>，<strong>ES2015</strong>，还有 Flow 你可以对你的代码进行大量的推断。使用<a href="https://github.com/jscs-dev/babel-jscs" target="_blank" rel="external"><font color="blue"> documentation.js </font></a> 可以非常简便地生成详细的 API 文档。</p>
+<p><strong>Documentation.js</strong> 使用 <strong>Babel</strong> 来支持所有最新的语法，包括用于在你的代码中声明类型所用的 Flow 注解在内，</p>
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>所有主流的 <strong>JavaScript</strong> 框架都正在努力调整他们的 <strong>APIs</strong> 向这门语言的未来看齐。有鉴于此，配套工具方面已经做出了大量的工作。</p>
+<p>除了使用 <strong>Babel</strong> 以外，框架更有条件去扩展 <strong>Babel</strong> 来帮助他们提升用户体验。</p>
+<h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p><strong>React</strong> 已经大幅改变了他们的 <strong>API</strong> 以适应 <strong>ES2015</strong> 的类语法（<a href="http://babeljs.io/blog/" target="_blank" rel="external"><font color="blue">此处了解更新的API</font></a>）。 再者，<strong>React</strong> 依赖 <strong>Babel</strong> 来编译它的 <strong>JSX</strong> 语法，并弃用了它自己的工具来支持 <strong>Babel</strong>。 你可以按照上述说明安装 babel-preset-react 包来开始。</p>
+<p><strong>React</strong> 社区采用 <strong>Babel</strong> 并围绕它来运行，现在社区已经创建了<a href="https://www.npmjs.com/search?q=babel-plugin+react" target="_blank" rel="external"><font color="blue">大量的转换器（transforms）</font></a>。</p>
+<p>最令人瞩目的是 <a href="https://github.com/gaearon/babel-plugin-react-transform" target="_blank" rel="external"><font color="blue">babel-plugin-react-transform</font></a> 插件，它集成了大量<a href="https://github.com/gaearon/babel-plugin-react-transform#transforms" target="_blank" rel="external"><font color="blue">React 专用转换器</font></a> 可以启用诸如 <em>热模块</em>、<em>重载</em>等其他调试工具。</p>
+<h2 id="文本编辑器和-IDEs（集成开发环境）"><a href="#文本编辑器和-IDEs（集成开发环境）" class="headerlink" title="文本编辑器和 IDEs（集成开发环境）"></a>文本编辑器和 IDEs（集成开发环境）<br></h2><p>通过 <strong>Babel</strong> 引入 <strong>ES2015</strong>，<strong>JSX</strong>，和流式语法固然是大有裨益，可如果你的文本编辑不支持那可就糟糕透了。 因此，别忘了为你的文本编辑器或是 <strong>IDE</strong> 安装 <strong>Babel</strong> 插件。</p>
+<ul>
+<li>Sublime Text</li>
+<li>Atom</li>
+<li>Vim</li>
+<li>WebStorm</li>
+</ul>
+<h1 id="调试Babel"><a href="#调试Babel" class="headerlink" title="调试Babel"></a>调试Babel<br><br></h1><h1 id="Babel-支持"><a href="#Babel-支持" class="headerlink" title="Babel 支持"></a>Babel 支持<br><br></h1><p>Babel 的社区非常庞大并且增长速度很快，伴随着我们成长的同时我们希望保证人们总能获取他们需要的所有资源。 所以我们提供了数种途径来提供支持。</p>
+<p>谨记在所有的这些沟通渠道里我们都共同遵守一套<a href="https://github.com/babel/babel/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="external"><font color="blue">行为准则</font></a>。 破坏准则的行为会被处理。 所以请阅读它并在与他人互动时注意自己的行为。</p>
+<p>同时我们也在寻求发展一个自我支持式的社区，为那些始终热诚奉献的人们。 如果别人问的问题你恰好知道答案，请不吝花费几分钟帮帮他们。 在此过程中也请尽力保持友善与相互理解。</p>
+<h2 id="Babel-论坛"><a href="#Babel-论坛" class="headerlink" title="Babel 论坛"></a>Babel 论坛<br></h2><p><a href="http://www.discourse.org/" target="_blank" rel="external"><font color="blue">Discourse</font></a> 免费为我们提供了一个托管版本的论坛（我们爱死他们了！）。 如果你是个论坛控请不要错过 <a href="https://discuss.babeljs.io/" target="_blank" rel="external"><font color="blue">discuss.babeljs.io</font></a>。</p>
+<h2 id="Babel-聊天"><a href="#Babel-聊天" class="headerlink" title="Babel 聊天"></a>Babel 聊天<br></h2><p>无人不爱 <a href="https://slack.com/" target="_blank" rel="external"><font color="blue">Slack</font></a>。如果你正在寻求来自社区的即时支持，那就来<a href="https://slack.babeljs.io/" target="_blank" rel="external"><font color="blue">slack.babeljs.io</font></a>  和我们聊天吧。</p>
+<h2 id="Babel-问题"><a href="#Babel-问题" class="headerlink" title="Babel 问题"></a>Babel 问题<br></h2><p>Babel 使用了 <a href="http://phabricator.org/" target="_blank" rel="external"><font color="blue">Phabricator</font></a> 这个非常棒的问题跟踪应用，这是一个能让 Github 问题追踪变成昨日黄花的开源软件开发平台。</p>
+<p>Babel 的 Phabricator 地址是：<a href="https://phabricator.babeljs.io/" target="_blank" rel="external"><font color="blue">phabricator.babeljs.io</font></a> 你可以在 <a href="https://phabricator.babeljs.io/maniphest/" target="_blank" rel="external"><font color="blue">maniphest</font></a> 查看所有打开和关闭的问题。.</p>
+<p>如果你想要打开一个新的问题：</p>
+<ul>
+<li><a href="https://phabricator.babeljs.io/maniphest/query/advanced/" target="_blank" rel="external"><font color="blue">先搜搜看有没有现存的类似问题</font></a></li>
+<li><a href="https://phabricator.babeljs.io/auth/start/" target="_blank" rel="external"><font color="blue">登录</font></a>或<a href="https://phabricator.babeljs.io/auth/register/" target="_blank" rel="external"><font color="blue">注册账号</font></a>（你可以使用 GitHub, Facebook, Twitter, Google 等账号直接登录)</li>
+<li><a href="https://phabricator.babeljs.io/maniphest/task/create/?projects=PHID-PROJ-2ufzspoyuk4udiwfnzls#R" target="_blank" rel="external"><font color="blue">创建新的错误报告</font></a>或者<a href="https://phabricator.babeljs.io/maniphest/task/create/?projects=PHID-PROJ-dfaevtocl5zgjtstjijd#R" target="_blank" rel="external"><font color="blue">请求新的功能特性</font></a></li>
+</ul>
+<h2 id="创建漂亮的-Babel-错误报告"><a href="#创建漂亮的-Babel-错误报告" class="headerlink" title="创建漂亮的 Babel 错误报告"></a>创建漂亮的 Babel 错误报告<br></h2><p>Babel 的问题有时候很难远程调试，所以我们希望能获取尽可能详细的信息来帮助我们解决问题。 花点时间去撰写一份好的错误报告会让你的问题更快得到解决。</p>
+<p>首先，尝试隔离问题。 并非设置过程的每一步都是导致问题的原因。 如果你的问题是一段输入代码，试着尽可能把与问题不相关的代码都删除掉。</p>
+<center> <iframe name="iframe_canvas" src="http://douban.fm/partner/baidu/doubanradio" scrolling="no" frameborder="0" width="400" height="200"></iframe> </center>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+            <a href="/tags/Babel/" rel="tag">#Babel</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/01/React学习系列(二)：ES6/" rel="prev" title="React学习系列（二）：ES6">
+                React学习系列（二）：ES6 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xsiot.com2.z0.glb.clouddn.com/nuannan.jpg"
+               alt="Mr Kong" />
+          <p class="site-author-name" itemprop="name">Mr Kong</p>
+          <p class="site-description motion-element" itemprop="description">Front End | 摄影 | 美食 | 淘宝</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shuaiguoisme" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Babel"><span class="nav-number">2.</span> <span class="nav-text">安装Babel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#babel-cli"><span class="nav-number">2.1.</span> <span class="nav-text">babel-cli</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在项目内运行-Babel-CLI"><span class="nav-number">2.2.</span> <span class="nav-text">在项目内运行 Babel CLI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#babel-register"><span class="nav-number">2.3.</span> <span class="nav-text">babel-register</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#babel-node"><span class="nav-number">2.4.</span> <span class="nav-text">babel-node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#babel-core"><span class="nav-number">2.5.</span> <span class="nav-text">babel-core</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置-Babel"><span class="nav-number">3.</span> <span class="nav-text">配置 Babel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#babelrc"><span class="nav-number">3.1.</span> <span class="nav-text">.babelrc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#babel-preset-es2015"><span class="nav-number">3.2.</span> <span class="nav-text">babel-preset-es2015</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#babel-preset-react"><span class="nav-number">3.3.</span> <span class="nav-text">babel-preset-react</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#babel-preset-stage-x"><span class="nav-number">3.4.</span> <span class="nav-text">babel-preset-stage-x</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行Babel生成的代码"><span class="nav-number">4.</span> <span class="nav-text">执行Babel生成的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#babel-polyfill"><span class="nav-number">4.1.</span> <span class="nav-text">babel-polyfill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#babel-runtime"><span class="nav-number">4.2.</span> <span class="nav-text">babel-runtime</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置Babel（进阶）"><span class="nav-number">5.</span> <span class="nav-text">配置Babel（进阶）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#手动指定插件"><span class="nav-number">5.1.</span> <span class="nav-text">手动指定插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件选项"><span class="nav-number">5.2.</span> <span class="nav-text">插件选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于环境自定义-Babel"><span class="nav-number">5.3.</span> <span class="nav-text">基于环境自定义 Babel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制作你自己的预设（preset）"><span class="nav-number">5.4.</span> <span class="nav-text">制作你自己的预设（preset）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Babel-和其他工具"><span class="nav-number">6.</span> <span class="nav-text">Babel 和其他工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#静态分析工具"><span class="nav-number">6.1.</span> <span class="nav-text">静态分析工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法检查（Linting）"><span class="nav-number">6.2.</span> <span class="nav-text">语法检查（Linting）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码风格"><span class="nav-number">6.3.</span> <span class="nav-text">代码风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档"><span class="nav-number">6.4.</span> <span class="nav-text">文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#框架"><span class="nav-number">6.5.</span> <span class="nav-text">框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React"><span class="nav-number">6.6.</span> <span class="nav-text">React</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本编辑器和-IDEs（集成开发环境）"><span class="nav-number">6.7.</span> <span class="nav-text">文本编辑器和 IDEs（集成开发环境）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调试Babel"><span class="nav-number">7.</span> <span class="nav-text">调试Babel</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Babel-支持"><span class="nav-number">8.</span> <span class="nav-text">Babel 支持</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Babel-论坛"><span class="nav-number">8.1.</span> <span class="nav-text">Babel 论坛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Babel-聊天"><span class="nav-number">8.2.</span> <span class="nav-text">Babel 聊天</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Babel-问题"><span class="nav-number">8.3.</span> <span class="nav-text">Babel 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建漂亮的-Babel-错误报告"><span class="nav-number">8.4.</span> <span class="nav-text">创建漂亮的 Babel 错误报告</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mr Kong</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

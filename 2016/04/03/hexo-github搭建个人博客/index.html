@@ -1,0 +1,605 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="帅锅" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="hexo安装使用Hexo 是一个快速、简洁且高效的博客框架，Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
+hexo安装官网文档
+
+pc安装node
+执行：12345npm install hexo-cli -ghexo init myblogcd myblognpm installhexo server
+
+
+
+npm install 后面不加应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo+github搭建个人博客">
+<meta property="og:url" content="http://yoursite.com/2016/04/03/hexo-github搭建个人博客/index.html">
+<meta property="og:site_name" content="帅锅">
+<meta property="og:description" content="hexo安装使用Hexo 是一个快速、简洁且高效的博客框架，Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
+hexo安装官网文档
+
+pc安装node
+执行：12345npm install hexo-cli -ghexo init myblogcd myblognpm installhexo server
+
+
+
+npm install 后面不加应">
+<meta property="og:image" content="http://7xsiot.com2.z0.glb.clouddn.com/suoluetu.png">
+<meta property="og:updated_time" content="2016-04-03T13:24:35.614Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo+github搭建个人博客">
+<meta name="twitter:description" content="hexo安装使用Hexo 是一个快速、简洁且高效的博客框架，Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
+hexo安装官网文档
+
+pc安装node
+执行：12345npm install hexo-cli -ghexo init myblogcd myblognpm installhexo server
+
+
+
+npm install 后面不加应">
+<meta name="twitter:image" content="http://7xsiot.com2.z0.glb.clouddn.com/suoluetu.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> hexo+github搭建个人博客 | 帅锅 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">帅锅</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                hexo+github搭建个人博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-03T20:39:06+08:00" content="2016-04-03">
+              2016-04-03
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="hexo安装使用"><a href="#hexo安装使用" class="headerlink" title="hexo安装使用"></a>hexo安装使用</h2><p>Hexo 是一个快速、简洁且高效的博客框架，Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h3 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h3><p><a href="http://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">官网文档</a></p>
+<ol>
+<li>pc安装node</li>
+<li>执行：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init myblog</span><br><span class="line">cd myblog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>npm install 后面不加应用名的话，npm会把当前目录当成node的一个包，会去读当前<br>目录下的package.json,会把package.json里的dependencies下面的依赖加载到node-module里</p>
+</blockquote>
+<p>在浏览器输入：<a href="http://127.0.0.1:4000即可浏览博客" target="_blank" rel="external">http://127.0.0.1:4000即可浏览博客</a></p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>_config.yml</p>
+<h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><p>在执行<font color="blue">hexo init myblog</font>后会在当前文件夹下生成myblog文件夹，里面目录和文件包括：</p>
+<ul>
+<li>scaffold:  模板文件，其中post.md是写文章的模板</li>
+<li>source:  _post目录下方文章源文件，写的文章就放在这里，比如：文章1.md</li>
+<li>themes: 主题文件，这里面放的都是跟主题有关的文件</li>
+<li>.gitignore: git的忽略文件，这里面配置的是需要忽略的文件</li>
+<li>_config.yml 是配置文件，配置博客的相关信息</li>
+<li>package.json: node应用的版本信息，依赖（所依赖的文件在node-module里）</li>
+</ul>
+<p>执行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new 我的第一篇文章</span><br><span class="line">#或者：</span><br><span class="line">hexo new post 我的第一个文章</span><br></pre></td></tr></table></figure></p>
+<p>这时会在source文件夹下自动生成<font color="blue">我的第一篇文章.md</font> ，使用编辑器打开<font color="blue">我的第一篇文章.md</font>，设置标签和分类，具体写法请参照<a href="http://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">官网文档</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我的第一篇文章</span><br><span class="line">date: 2016-04-03 10:16:25</span><br><span class="line">tags: </span><br><span class="line">- 前端</span><br><span class="line">- 后端</span><br><span class="line">categories:</span><br><span class="line">- 技术</span><br><span class="line">---</span><br><span class="line">我的第一次写博客</span><br></pre></td></tr></table></figure></p>
+<p>hexo也可以设置多层子类:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">期望的层级结构:</span><br><span class="line">	技术</span><br><span class="line">		前端</span><br><span class="line">		后端</span><br><span class="line">		UED</span><br><span class="line">	生活</span><br><span class="line">		摄影</span><br><span class="line">		美食</span><br></pre></td></tr></table></figure></p>
+<p>新建文章<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new JavaScript.md</span><br></pre></td></tr></table></figure></p>
+<p>在<font color="blue">source&gt;_posts&gt;JavaScript.md</font>中设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: JavaScript</span><br><span class="line">date: 2016-04-03 10:16:25</span><br><span class="line">tags: </span><br><span class="line">	- JavaScript</span><br><span class="line">categories:</span><br><span class="line">	- 技术</span><br><span class="line">	- 前端</span><br><span class="line">	- JavaScript</span><br><span class="line">---</span><br><span class="line">JavaScript</span><br></pre></td></tr></table></figure></p>
+<h3 id="模板文件"><a href="#模板文件" class="headerlink" title="模板文件"></a>模板文件</h3><p>scaffold文件夹下放置的是页面的模板，如果想生成新文章带有不同的样式，可以去<font color="blue">scaffold&gt;post.md</font>里去设置<br>生成新页面:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page mypage</span><br></pre></td></tr></table></figure>
+<h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><p>hexo默认生成的主题可以不满足用户需求，需要自己去<a href="https://hexo.io/themes/" target="_blank" rel="external">官网</a>或者去<a href="https://github.com/" target="_blank" rel="external">github</a>上搜<font color="blue">hexo</font>相关的主题</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>以<font color="blue">hueman</font>主题为例，从官网进入项目的<font color="blue">github</font>地址，或者直接在<font color="blue">github</font>搜项目名称，找到之后down下来，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/ppoffice/hexo-theme-hueman.git themes/hueman</span><br></pre></td></tr></table></figure></p>
+<p>然后修改<font color="blue">_config.yml</font>的配置文件，搜索<font color="blue">theme</font>,改为<font color="blue">hueman</font>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">## theme: landscape 改为</span><br><span class="line">theme: hueman</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>在<font color="blue">themes&gt;hueman</font>文件夹下有个<font color="blue">_config.yml.example</font>文件，这个文件只是官方的示例，需要自己再新建个<font color="blue">_config.yml</font>文件，否则主题不生效</p>
+</blockquote>
+<h4 id="菜单栏"><a href="#菜单栏" class="headerlink" title="菜单栏"></a>菜单栏</h4><blockquote>
+<p>这里我们把最外面的<font color="blue">_config.yml</font>文件叫做<em>站点配置</em>文件，把主题文件夹里的<font color="blue">_config.yml</font>文件叫做<em>主题配置</em>文件</p>
+</blockquote>
+<p>如果想增加菜单选项，只需要在<em>主题配置</em>文件中搜索<font color="blue">menu</font>增加路径：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    Home: /hexo-theme-hueman/</span><br><span class="line">    # Delete this row if you don&apos;t want categories in your header nav bar</span><br><span class="line">    Categories:</span><br><span class="line">+   address: /address/index.html</span><br><span class="line">    About: /about/index.html</span><br></pre></td></tr></table></figure></p>
+<p>然后，生成对应的页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page address</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>前面我们已经配置过模板文件，直接生成页面就可以</p>
+</blockquote>
+<h4 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a>个性化设置</h4><p>文章首张图片会生成缩略图<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我的第一篇文章</span><br><span class="line">date: 2016-04-03 10:16:25</span><br><span class="line">tags: </span><br><span class="line">- 前端</span><br><span class="line">- 后端</span><br><span class="line">categories:</span><br><span class="line">- 技术</span><br><span class="line">---</span><br><span class="line">我的第一次写博客 </span><br><span class="line">![测试](http://7xsiot.com2.z0.glb.clouddn.com/shenfu.jpg)</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://7xsiot.com2.z0.glb.clouddn.com/suoluetu.png" alt=""></p>
+<blockquote>
+<p>我们可以拿七牛云存储做图床，上传图片后会自动生成外链，如果想把图片链接设置成相对链接需要再<font color="blue">站点配置</font>文件里修改<font color="blue">post_asset_folder</font>改为true，当</p>
+<p><font color="blue">hexo new 文章2</font>的时候，post文件夹下除了生成<font color="blue">文章2.md</font>,还会生成<font color="blue">文章2</font>的文件夹，将图片放进去，用的时候直接</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章2</span><br><span class="line">date: 2016-04-03 10:16:25</span><br><span class="line">tags: </span><br><span class="line">- 前端</span><br><span class="line">- 后端</span><br><span class="line">categories:</span><br><span class="line">- 技术</span><br><span class="line">---</span><br><span class="line"> 文章2</span><br><span class="line">![img](shenfu.jpg)</span><br></pre></td></tr></table></figure>
+<p>就可以显示出来。</p>
+<h2 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h2><p>如何上传如何配置SSH，官方文档讲的最详细<a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/deployment.html</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag">#hexo</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/01/React学习系列(二)：ES6/" rel="next" title="React学习系列（二）：ES6">
+                <i class="fa fa-chevron-left"></i> React学习系列（二）：ES6
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xsiot.com2.z0.glb.clouddn.com/nuannan.jpg"
+               alt="Mr Kong" />
+          <p class="site-author-name" itemprop="name">Mr Kong</p>
+          <p class="site-description motion-element" itemprop="description">Front End | 摄影 | 美食 | 淘宝</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shuaiguoisme" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo安装使用"><span class="nav-number">1.</span> <span class="nav-text">hexo安装使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo安装"><span class="nav-number">1.1.</span> <span class="nav-text">hexo安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-number">1.2.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写作"><span class="nav-number">1.3.</span> <span class="nav-text">写作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板文件"><span class="nav-number">1.4.</span> <span class="nav-text">模板文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题"><span class="nav-number">1.5.</span> <span class="nav-text">主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">1.5.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#菜单栏"><span class="nav-number">1.5.2.</span> <span class="nav-text">菜单栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#个性化设置"><span class="nav-number">1.5.3.</span> <span class="nav-text">个性化设置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传到github"><span class="nav-number">2.</span> <span class="nav-text">上传到github</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mr Kong</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
