@@ -71,7 +71,7 @@
 学习项目会经常用到的基本的ES6语法 有时间可以看阮一峰老师出版的《ESMAScript 6入门（第二版）》这本书，但是，往往在项目中实际用到的80%的语法只占ES6语法的20%，所以我们花点时间把这20%学好，那就差不多够用了，剩下的可以现学现用。阮老师那本书别看不厚，内容很充实
 
 重要提示：本教程直接基于项目脚手架webpack-dev-boilerplate进">
-<meta property="og:updated_time" content="2016-04-03T15:53:15.994Z">
+<meta property="og:updated_time" content="2016-04-05T02:30:14.510Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React学习系列（二）：ES6">
 <meta name="twitter:description" content="ES6语法快餐，为开发做好铺垫
@@ -290,6 +290,10 @@
 <h1 id="export-import"><a href="#export-import" class="headerlink" title="export, import"></a>export, import<br><br></h1><p>以前我们学习AMD和CMD规范，讨论用什么样的模块化规范比较合适，更有甚者，不得不使用UMD规范来做全兼容，现在好了，ES6在语言层面推出了模块化的写法。</p>
 <p>在util下面新建两个模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd util &amp;&amp; touch moduleA.js moduleB.js</span><br></pre></td></tr></table></figure></p>
 <p>代码清单：<font color="blue">app/util/moduleA.js</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line"></span><br><span class="line">export default function foo(x, y) &#123;</span><br><span class="line">  return x * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 另外几种导出的方式</span><br><span class="line">// function foo() &#123;</span><br><span class="line">//   console.log(&apos;foo&apos;);</span><br><span class="line">// &#125;</span><br><span class="line">// export &#123; foo as default &#125;;</span><br><span class="line">// export var a = 1;</span><br><span class="line">// export const PI = 3.14;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>export 是导出的意思<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export default function 函数名(item1,item2) &#123;</span><br><span class="line">      逻辑  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>向外导出函数,也可以将函数提取出来，单独导出，export还可以导出变量,常量,对象…</p>
 <p>代码清单：<font color="blue">app/util/moduleB.js</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line"></span><br><span class="line">import moduleA from &apos;./moduleA&apos;;</span><br><span class="line"></span><br><span class="line">console.log( moduleA(2, 3) );</span><br></pre></td></tr></table></figure></p>
 <p>代码清单：<font color="blue">app/index.js</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line"></span><br><span class="line">import moduleB from &apos;./util/moduleB &apos;;</span><br></pre></td></tr></table></figure></p>
 <p>最终运行打印出结果：6；</p>
